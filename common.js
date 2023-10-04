@@ -22,9 +22,10 @@ let count=0;
 
 function itemTotal(e){
     
-const itemPriceString=e.target.childNodes[5].childNodes[0];
+const itemPriceString=e.target.parentNode.children[1].childNodes[5].childNodes[0];
 const itemPrice=parseFloat(itemPriceString.innerText)
-const itemName=e.target.childNodes[3].innerText;
+const itemName=e.target.parentNode.children[1].children[1].innerText;
+
 const itemAdd=document.getElementById('item-name')
 const p=document.createElement('p');
 
@@ -38,7 +39,7 @@ itemAdd.appendChild(p)
 
 const totalPrice=document.getElementById('total-price');
 const previousTotalPrice=getPriceValueById('total-price')
-console.log(previousTotalPrice)
+
 const newTotalPrice=parseFloat(itemPrice+previousTotalPrice);
 totalPrice.innerText=newTotalPrice.toFixed(2);
 if(newTotalPrice>0){
