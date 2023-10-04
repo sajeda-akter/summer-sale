@@ -8,18 +8,20 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- font awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <header>
         <div class="hero min-h-screen bg-[#F9F6E2]">
-            <div class="hero-content flex-col lg:flex-row-reverse">
-              <img src="images/Summer 1.png" class="max-w-sm rounded-lg " />
+            <div class="hero-content flex-col md:flex-col-reverse lg:flex-row-reverse">
+              <img src="images/Summer 1.png" class=" md:max-w-sm lg:max-w-sm rounded-lg " />
               <div class="text-center">
                 <p class="text-xl mb-4 font-medium">---SALE FEVER---</p>
                 <h1 class="text-3xl w-[300px] lg:text-5xl font-bold lg:w-[503px] lg:h-32 mx-auto">Purchase TK 200 or above & get <span class="text-[#E527B2]">20% off</span></h1>
                <div class="flex justify-center items-center gap-4 text-xl">
                 <p class="py-6">Use Promo Code</p>
-                <p id="code" class="bg-[#E527B2] rounded text-white  px-3 py-1">SELL200</p>
+<button class="bg-[#E527B2] rounded text-white  px-3 py-1">SELL200</button>
                </div>
               </div>
             </div>
@@ -28,12 +30,12 @@
 
     <main>
         <!-- card section -->
-        <section class="flex justify-around lg:flex-row flex-col-reverse items-center lg:items-start  pt-24 bg-[#F8F8F8]">
-            <div>
+        <section class="flex justify-around  md:items-center lg:flex-row flex-col-reverse items-center lg:items-start  pt-24 bg-[#F8F8F8]">
+            <div class="">
                 <!-- kitchenware -->
                 <div class="row" >
-                    <h1 class="text-3xl font-bold mb-4 mt-8 text-center lg:text-left">kitchenware</h1>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 " id="kitchenware">
+                    <h1 class="text-3xl font-bold mb-4 mt-8 text-center  lg:text-left">kitchenware</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 " id="kitchenware">
                         <div class="card w-80 bg-base-100 shadow-xl">
                             <figure class="px-10 pt-10">
                               <img src="images/prod1.png" alt="K. Accessories" class="rounded-xl bg-gray-200 px-24 py-8" />
@@ -91,7 +93,7 @@
                 <!-- sports section -->
                 <div class="row mt-16">
                     <h1 class="text-3xl font-bold mb-4 mt-8 text-center lg:text-left">Sportsware</h1>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4" id="sports">
+                    <div class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4" id="sports">
                         <div class="card w-80 bg-base-100 shadow-xl">
                             <figure class="px-10 pt-10">
                               <img src="images/prod4.png" alt="K. Accessories" class="rounded-xl bg-gray-200 px-24 py-8" />
@@ -147,7 +149,7 @@
                 </div>
                 <div class="row mt-16 mb-4">
                     <h1 class="text-3xl font-bold mb-4 mt-8 text-center lg:text-left">Furniture</h1>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4" id="furniture">
+                    <div class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4" id="furniture">
                         <div class="card w-80 bg-base-100 shadow-xl">
                             <figure class="px-10 pt-10">
                               <img src="images/prod7.png" alt="K. Accessories" class="rounded-xl bg-gray-200 px-24 py-8" />
@@ -203,10 +205,13 @@
                 </div>
 
             </div>
-            <div class="w-[300px] mt-20">
-               <div class="bg-white flex px-2 py-1 border border-gray-200 py-1">
-                <input type="text" placeholder="Enter the coupon code" class="outline-0 pl-4" id="coupon">
-                <button class="bg-[#E527B2] text-white w-32 py-1 text-xl" disabled id="apply">Apply</button>
+            <div class="w-[300px] mt-20 ">
+               <div class="bg-white  border border-gray-200 py-1 h-24 w-full">
+                <p class="pl-4 py-1">Have a coupon?</p>
+                <div class="border border-gray-400  px-4 rounded w-56  flex ml-2">
+                  <input type="text" placeholder="Enter  coupon " class=" outline-0 pl-4" id="coupon">
+                <button class="bg-[#E527B2] text-white px-3  py-2 rounded" disabled id="apply">Apply</button>
+                </div>
                </div>
                <div class=" bg-white rounded relative">
                 <h3 class="text-center p-2 mt-6 text-xl underline ">Add To Cart</h3>
@@ -216,18 +221,18 @@
                 <p class="text-xl font-semibold pl-2">Total Price: <span id="total-price">00</span></p>
                 <p class="text-xl font-semibold pl-2 my-2">Discount: <span id="discount">00</span></p>
                 <p class="text-xl font-semibold pl-2">Total: <span id="total">00</span></p>
-                <div class="divider w-56 mx-auto pb-16"></div>
+                <div class="divider w-56 mx-auto "></div>
                 <button onclick="my_modal_1.showModal()" class="absolute bottom-0 right-4 text-white px-20 py-2 bg-[#E527B2] rounded" id="purchase" disabled>Make purchase</button>
 
 
                 <!-- Open the modal using ID.showModal() method -->
 <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
-<dialog id="my_modal_1" class="modal">
+<dialog id="my_modal_1" class="modal relative">
   <div class="modal-box">
 <img src="images/congo.png" class="w-40 mx-auto" alt="">
 <h1 class="text-center text-5xl font-bold">Congratulations</h1>
     <p class="py-4 text-center text-gray-400">You purchase the product</p>
-    <div class="modal-action w-16 mx-auto">
+    <div class="modal-action w-32  absolute bottom-5 right-100">
         <a href="index.html" class="bg-[#E527B2] rounded px-2 py-1 text-white">GO To Home</a>
     </div>
   </div>

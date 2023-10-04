@@ -1,4 +1,23 @@
+// get items price by id
+function getPriceValueById(elementId){
+    const element=document.getElementById(elementId);
+    const elementStringValue=element.innerText;
+    const elementValue=parseFloat(elementStringValue);
+    return elementValue;
+}
 
+
+function getInputValueById(inputId){
+    const inputField=document.getElementById(inputId)
+    const inputStringValue=inputField.value;
+    const inputValue=parseFloat(inputStringValue);
+    return inputValue
+}
+
+function setValueById(id,newValue){
+    const idField=document.getElementById(id);
+    idField.innerText=newValue.toFixed(2)
+}
 let count=0;
 
 function itemTotal(e){
@@ -18,9 +37,16 @@ itemAdd.appendChild(p)
 // item prices total with discount
 
 const totalPrice=document.getElementById('total-price');
-const previousTotalPrice=parseFloat(totalPrice.innerText)
+const previousTotalPrice=getPriceValueById('total-price')
+console.log(previousTotalPrice)
 const newTotalPrice=parseFloat(itemPrice+previousTotalPrice);
-totalPrice.innerText=newTotalPrice.toFixed(2)
+totalPrice.innerText=newTotalPrice.toFixed(2);
+if(newTotalPrice>0){
+    
+// make purchase
+const purchase=document.getElementById('purchase');
+purchase.removeAttribute('disabled')
+}
 
 if(newTotalPrice>=200){
     const apply=document.getElementById('apply');
@@ -31,24 +57,18 @@ if(newTotalPrice>=200){
         const code=coupon.value;
         if(code==='SELL200'){
 
-            // price total all the items
-            const totalPriceString=document.getElementById('total-price');
-            const totalPrice=parseFloat(totalPriceString.innerText)
-            
-            // discount for 200 or above shopping
-            const discount=document.getElementById('discount')
+            const totalPrice=getPriceValueById('total-price');
+            setValueById('total-price',totalPrice)
+ 
             const discountPrice=totalPrice*.2;
-            discount.innerText=discountPrice.toFixed(2);
+            setValueById('discount',discountPrice)
 
             // total amount with discount
-const total=document.getElementById('total')
+
 const newTotal=newTotalPrice-discountPrice
-total.innerText=newTotal.toFixed(2)
+setValueById('total',newTotal)
 
 
-// make purchase
-const purchase=document.getElementById('purchase');
-purchase.removeAttribute('disabled')
            
         }
         else{
